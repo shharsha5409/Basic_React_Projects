@@ -1,19 +1,23 @@
-import Pop from './Pop';
-import Contact from './Contact';
-import Greeting from './Greeting';
+// This particular React app provides clear explaination of React Routing  
 
-function App() {
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import Contact from './pages/Contact'
+import About from './pages/About'
+import { Routes, Route } from 'react-router-dom'
+
+export default function App() {
   return (
     <>
-    <h1>Hello from ReactJS</h1>
-    <p>Thank you friends</p>
-    <Pop />
-    <Contact />
-    <Greeting name = {'Harsha'} />
-    <Greeting name = {'Raju'} />
-    <Greeting name = {'Murali Krishnan Reddy'} />
+    <Navbar />
+    <div class='container'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/About' element={<About />} />
+          <Route path='/Contact' element={<Contact/>} />
+        </Routes>
+    </div>
     </>
-  );
+  )
 }
 
-export default App;
